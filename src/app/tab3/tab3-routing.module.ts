@@ -2,11 +2,19 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { Tab3Page } from './tab3.page';
 
+
+
 const routes: Routes = [
   {
     path: '',
     component: Tab3Page,
-  }
+  },
+  {
+    path: 'tab3b',
+    loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
+  },
+
+
 ];
 
 @NgModule({
@@ -14,3 +22,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class Tab3PageRoutingModule {}
+
+export class NotesAddPageRoutingModule {}
